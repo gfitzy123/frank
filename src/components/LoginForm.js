@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import firebase from 'firebase';
 import { Card, CardSection, Button, Input, Spinner } from './common';
 
 class LoginForm extends Component {
@@ -11,35 +10,35 @@ class LoginForm extends Component {
     loading: false
   };
 
-  onButtonPress() {
-    const { email, password } = this.state;
+  // onButtonPress() {
+  //   const { email, password } = this.state;
 
-    this.setState({ error: '', loading: true });
+  //   this.setState({ error: '', loading: true });
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(this.onLoginSuccess.bind(this))
-      .catch(() => {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(this.onLoginSuccess.bind(this))
-          .catch(this.onLoginFail.bind(this));
-      });
-  }
+  //   firebase.auth().signInWithEmailAndPassword(email, password)
+  //     .then(this.onLoginSuccess.bind(this))
+  //     .catch(() => {
+  //       firebase.auth().createUserWithEmailAndPassword(email, password)
+  //         .then(this.onLoginSuccess.bind(this))
+  //         .catch(this.onLoginFail.bind(this));
+  //     });
+  // }
 
-  onLoginSuccess() {
-    this.setState({
-      email: '',
-      password: '',
-      error: '',
-      loading: false
-    });
-  }
+  // onLoginSuccess() {
+  //   this.setState({
+  //     email: '',
+  //     password: '',
+  //     error: '',
+  //     loading: false
+  //   });
+  // }
 
-  onLoginFail() {
-    this.setState({
-      error: 'Authentication Failed!',
-      loading: false
-    });
-  }
+  // onLoginFail() {
+  //   this.setState({
+  //     error: 'Authentication Failed!',
+  //     loading: false
+  //   });
+  // }
 
   renderButton() {
     if (this.state.loading) {
@@ -47,23 +46,23 @@ class LoginForm extends Component {
     }
 
     return (
-      <Button onPress={this.onButtonPress.bind(this)}>
+      <Button>
         Log in
       </Button>
     );
   }
 
-  renderErrorText() {
-    if (this.state.error !== '') {
-      return (
-        <Text style={styles.errorTextStyle}>
-          {this.state.error}
-        </Text>
-      );
-    }
+  // renderErrorText() {
+  //   if (this.state.error !== '') {
+  //     return (
+  //       <Text style={styles.errorTextStyle}>
+  //         {this.state.error}
+  //       </Text>
+  //     );
+  //   }
 
-    return null;
-  }
+  //   return null;
+  // }
 
   render() {
     return (
@@ -73,7 +72,7 @@ class LoginForm extends Component {
             label='Email'
             placeholder='user@gmail.com'
             value={this.state.email}
-            onChangeText={email => this.setState({ email })}
+            // onChangeText={email => this.setState({ email })}
           />
         </CardSection>
 
@@ -83,11 +82,11 @@ class LoginForm extends Component {
             placeholder='password'
             value={this.state.password}
             secureTextEntry
-            onChangeText={password => this.setState({ password })}
+            // onChangeText={password => this.setState({ password })}
           />
         </CardSection>
 
-        {this.renderErrorText()}
+        {/* {this.renderErrorText()} */}
 
         <CardSection>
           {this.renderButton()}
