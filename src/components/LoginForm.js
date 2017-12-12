@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Card, CardSection, Button, Input, Spinner } from './common';
 
 class LoginForm extends Component {
@@ -66,6 +66,7 @@ class LoginForm extends Component {
 
   render() {
     return (
+      <View style={{ paddingTop: 65 }}>
       <Card>
         <CardSection>
           <Input
@@ -92,6 +93,7 @@ class LoginForm extends Component {
           {this.renderButton()}
         </CardSection>
       </Card>
+      </View>
     );
   }
 }
