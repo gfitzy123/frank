@@ -6,17 +6,17 @@ import LoginForm from './components/LoginForm';
 
 const RouterComponent = () => {
   return (
-    <Router sceneStyle={{ paddingTop: 65 }}>
-  
+ 
+    <Router>
         <Scene key="start">
-          <Scene key="home" component={Home} initial />
+          <Scene key="home" component={Home} title="Home" hideNavBar initial />
         </Scene>
 
         <Scene key="auth">
-          <Scene key="login" component={LoginForm} title="Login / Sign up" />
+          <Scene key="login" component={LoginForm} title="Login / Sign up" hideNavBar />
         </Scene>
- 
     </Router>
+
   );
 };
 

@@ -10,7 +10,7 @@ class Home extends Component {
         <View style={styles.imgContainerStyle}>
           <Image style={styles.imgStyle} source={require('../img/logo.png')} alt="Frank's logo" />
         </View>
-       <View style={{paddingTop: 200}}>
+        <View style={{paddingTop: 200}}>
           <Button onPress={() => Actions.auth()}>Sign Up</Button>
         </View>
       </View>
