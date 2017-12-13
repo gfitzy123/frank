@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Scene, Router } from 'react-native-router-flux';
 import Home from './components/Home';
 import LoginForm from './components/LoginForm';
+import Landing from './components/Landing';
 
 const RouterComponent = () => {
   return (
@@ -14,6 +15,10 @@ const RouterComponent = () => {
 
         <Scene key="auth">
           <Scene key="login" component={LoginForm} title="Login / Sign up" hideNavBar />
+        </Scene>
+
+        <Scene key="land">
+          <Scene key="landing" component={Landing} title="Home" hideNavBar initial />
         </Scene>
     </Router>
 
