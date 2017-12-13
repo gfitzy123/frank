@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 import { TurqButton, Card, CardSection, Input, Spinner } from './common';
 
@@ -31,6 +32,8 @@ class LoginForm extends Component {
       loading: false,
       error: ''
     });
+
+    Actions.land();
   }
 
   renderButton() {
