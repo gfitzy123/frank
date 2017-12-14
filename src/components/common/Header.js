@@ -8,11 +8,11 @@ const Header = (props) => {
 
   return (
     <View style={viewStyle}>
-      <Image source={require('../../img/profile.png')} alt="Profile icon" />
+      <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" />
       <Text style={textStyle}>
         {props.headerText}
       </Text>
-      <Image source={require('../../img/search.png')} alt="Search icon" />
+      <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
     </View>
   );
 };

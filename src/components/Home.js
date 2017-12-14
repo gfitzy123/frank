@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <View style={styles.viewStyle}>
         <View style={styles.imgContainerStyle}>
-          <Image style={styles.imgStyle} source={require('../img/logo.png')} alt="Frank's logo" />
+          <Image style={styles.imgStyle} source={require('../img/logo.png')} accessbilityLabel="Frank's logo" />
         </View>
         <View style={{paddingTop: 200}}>
           <Button onPress={() => Actions.auth()}>Sign In</Button>

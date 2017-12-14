@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 import { CardSection, TurqButton, Header } from './common';
+import NavBar from './NavBar';
 
 class Landing extends Component {
   render() {
@@ -15,6 +16,7 @@ class Landing extends Component {
           Log Out
         </TurqButton>
         </CardSection>
+        <NavBar />
       </View>
     );
   }
