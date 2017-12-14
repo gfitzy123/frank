@@ -11,7 +11,7 @@ class Home extends Component {
           <Image style={styles.imgStyle} source={require('../img/logo.png')} alt="Frank's logo" />
         </View>
         <View style={{paddingTop: 200}}>
-          <Button onPress={() => Actions.auth()}>Sign Up</Button>
+          <Button onPress={() => Actions.auth()}>Sign In</Button>
         </View>
       </View>
     );

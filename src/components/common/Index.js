@@ -4,3 +4,4 @@ export * from './CardSection';
 export * from './Input';
 export * from './Spinner';
 export * from './TurqButton';
+export * from './Header';
