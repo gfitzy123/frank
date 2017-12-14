@@ -18,7 +18,7 @@ const RouterComponent = () => {
         </Scene>
 
         <Scene key="land">
-          <Scene key="landing" component={Landing} title="Home" hideNavBar initial />
+          <Scene key="landing" component={Landing} title="Statistics" hideNavBar initial />
         </Scene>
     </Router>
 
