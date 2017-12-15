@@ -8,7 +8,7 @@ class NavBar extends Component {
         <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
         <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
         
-        <View>
+        <View style={styles.arrowStyle}>
           <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
         </View>
 
@@ -29,13 +29,19 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.7,
-    paddingTop: 10,
+    paddingTop: 15,
     height: 50, 
     elevation: 2, 
     position: 'absolute', 
     left: 0, 
     bottom: 0, 
-    right: 0,
+    right: 0
+  },
+  arrowStyle: {
+    elevation: 4,
+    bottom: 45,
+    overflow: 'visible',
+    position: 'relative'
   }
 }
 
