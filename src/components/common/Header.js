@@ -1,25 +1,41 @@
 // Import dependencies
-import React from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
+import SideNav from '../SideNav';
 
 // Make component
-const Header = (props) => {
-  const { textStyle, viewStyle } = styles;
+class Header extends Component {
 
-  return (
-    <View style={viewStyle}>
-      <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" />
-      <Text style={textStyle}>
-        {props.headerText}
-      </Text>
-      <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
-    </View>
-  );
+  onProfilePress() {
+    return (
+      <View style={{ flex: 3, backgroundColor: 'green' }}>
+        <SideNav />
+      </View>
+    );
+  };
+
+  render() {
+    const { textStyle, viewStyle } = styles;
+
+    return (
+      <View style={viewStyle}>
+        <TouchableOpacity onPress={this.onProfilePress}>
+          <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" />
+        </TouchableOpacity>
+        <Text style={textStyle}>
+          {this.props.headerText}
+        </Text>
+        <TouchableOpacity>
+          <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
+        </TouchableOpacity>
+      </View>
+    )
+  }
 };
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#edf5fa',
+    backgroundColor: '#f8fcff',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     alignContent: 'space-between',

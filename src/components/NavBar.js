@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux'
 
 class NavBar extends Component {
   render() {
     return (
       <View style={styles.viewStyle}>
-        <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
-        <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
-        
+        <TouchableOpacity onPress={() => Actions.account()}>
+          <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
+        </TouchableOpacity>
+
         <View style={styles.arrowStyle}>
-          <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
+          <TouchableOpacity onPress={() => Actions.land()}>
+            <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
+          </TouchableOpacity>
         </View>
 
-        <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
-        <Image source={require('../img/mail.png')} accessibilityLabel="mail icon" />
+        <TouchableOpacity>
+          <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={require('../img/mail.png')} accessibilityLabel="mail icon" />
+        </TouchableOpacity>
       </View>
     );
   }
@@ -21,7 +32,7 @@ class NavBar extends Component {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#edf5fa',
+    backgroundColor: '#f8fcff',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     alignContent: 'space-between',
