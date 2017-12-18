@@ -24,7 +24,7 @@ class Landing extends Component {
 const styles = {
   viewStyle: {
     flex: 1,
-    backgroundColor: '#edf5fa'
+    backgroundColor: '#f8fcff'
   },
   imgStyle: {
     marginLeft: 15,

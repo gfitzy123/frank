@@ -35,7 +35,7 @@ class Header extends Component {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#edf5fa',
+    backgroundColor: '#f8fcff',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     alignContent: 'space-between',

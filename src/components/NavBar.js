@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux'
 
 class NavBar extends Component {
   render() {
     return (
       <View style={styles.viewStyle}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Actions.account()}>
           <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
         </TouchableOpacity>
         <TouchableOpacity>
@@ -13,7 +14,7 @@ class NavBar extends Component {
         </TouchableOpacity>
 
         <View style={styles.arrowStyle}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => Actions.land()}>
             <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
           </TouchableOpacity>
         </View>
@@ -31,7 +32,7 @@ class NavBar extends Component {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#edf5fa',
+    backgroundColor: '#f8fcff',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     alignContent: 'space-between',
