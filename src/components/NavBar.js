@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 class NavBar extends Component {
   render() {
     return (
       <View style={styles.viewStyle}>
-        <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
-        <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
-        
+        <TouchableOpacity>
+          <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
+        </TouchableOpacity>
+
         <View style={styles.arrowStyle}>
-          <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
+          <TouchableOpacity>
+            <Image source={require('../img/arrow.png')} accessibilityLabel="arrow icon" />
+          </TouchableOpacity>
         </View>
 
-        <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
-        <Image source={require('../img/mail.png')} accessibilityLabel="mail icon" />
+        <TouchableOpacity>
+          <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image source={require('../img/mail.png')} accessibilityLabel="mail icon" />
+        </TouchableOpacity>
       </View>
     );
   }

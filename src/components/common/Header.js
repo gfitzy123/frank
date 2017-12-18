@@ -1,32 +1,36 @@
 // Import dependencies
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
+import SideNav from '../SideNav';
 
 // Make component
-const Header = (props) => {
-  const { textStyle, viewStyle } = styles;
+class Header extends Component {
 
-  function onProfilePress() {
+  onProfilePress() {
     return (
-        <View style={{ flex: 2 }}>
-          <Text>Pop!</Text>
-        </View>
+      <View style={{ flex: 3, backgroundColor: 'green' }}>
+        <SideNav />
+      </View>
     );
   };
 
-  return (
-    <View style={viewStyle}>
-      <TouchableOpacity>
-        <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" onPress={onProfilePress()} />
-      </TouchableOpacity>
-      <Text style={textStyle}>
-        {props.headerText}
-      </Text>
-      <TouchableOpacity>
-        <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
-      </TouchableOpacity>
-    </View>
-  );
+  render() {
+    const { textStyle, viewStyle } = styles;
+
+    return (
+      <View style={viewStyle}>
+        <TouchableOpacity onPress={this.onProfilePress}>
+          <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" />
+        </TouchableOpacity>
+        <Text style={textStyle}>
+          {this.props.headerText}
+        </Text>
+        <TouchableOpacity>
+          <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
+        </TouchableOpacity>
+      </View>
+    )
+  }
 };
 
 const styles = {
