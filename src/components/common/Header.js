@@ -1,18 +1,30 @@
 // Import dependencies
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 // Make component
 const Header = (props) => {
   const { textStyle, viewStyle } = styles;
 
+  function onProfilePress() {
+    return (
+        <View style={{ flex: 2 }}>
+          <Text>Pop!</Text>
+        </View>
+    );
+  };
+
   return (
     <View style={viewStyle}>
-      <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" />
+      <TouchableOpacity>
+        <Image source={require('../../img/profile.png')} accessibilityLabel="Profile icon" onPress={onProfilePress()} />
+      </TouchableOpacity>
       <Text style={textStyle}>
         {props.headerText}
       </Text>
-      <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
+      <TouchableOpacity>
+        <Image source={require('../../img/search.png')} accessibilityLabel="Search icon" />
+      </TouchableOpacity>
     </View>
   );
 };
