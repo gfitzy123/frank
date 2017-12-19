@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import NavBar from './NavBar';
+import { DisplayButton } from './common';
 
 class AccountDetails extends Component {
   constructor(props) {
@@ -87,13 +88,21 @@ class AccountDetails extends Component {
           <Image style={styles.logoStyle} source={require('../img/logo.png')} accessibilityLabel="Frank's logo" />
           <Text style={styles.homeTextStyle}>Home</Text>
         </View>
+
         <View style={styles.topViewStyle}>
           <Text style={styles.topTextStyle}>Days Until Next Payment</Text>
           <Image style={styles.donuteStyle} source={require('../img/donute.png')} accessibilityLabel="Amount of days until electric bill is due" />
           <Text style={styles.counterStyle}>{this.state.counter}</Text>
         </View>
+
         <View style={styles.bottomViewStyle}>
-          <Text>Button Components goes here.</Text>
+          <View style={styles.buttonContainerStyle}>
+            <DisplayButton>Current Rate: 4.2c/kWh</DisplayButton>
+            <DisplayButton>Prev Rate: 8.7c/kWh</DisplayButton>
+            
+            <DisplayButton>Current Bill: $2,123</DisplayButton>
+            <DisplayButton>Prev Bill: $4,427</DisplayButton>
+          </View>
         </View>
         <NavBar />
       </View>
@@ -148,6 +157,11 @@ const styles = {
     elevation: 2,
     top: -112,
     padding: 0
+  },
+  buttonContainerStyle: {
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    alignContent: 'flex-start'
   }
 }
 
