@@ -89,8 +89,8 @@ class AccountDetails extends Component {
         </View>
         <View style={styles.topViewStyle}>
           <Text style={styles.topTextStyle}>Days Until Next Payment</Text>
-          <Image source={require('../img/donute.png')} accessibilityLabel="Amount of days until electric bill is due" />
-          <Text>{this.state.counter}</Text>
+          <Image style={styles.donuteStyle} source={require('../img/donute.png')} accessibilityLabel="Amount of days until electric bill is due" />
+          <Text style={styles.counterStyle}>{this.state.counter}</Text>
         </View>
         <View style={styles.bottomViewStyle}>
           <Text>Button Components goes here.</Text>
@@ -135,6 +135,19 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'flex-start',
     flexDirection: 'row',
+  },
+  donuteStyle: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  counterStyle: {
+    color: '#fff',
+    fontSize: 40,
+    fontWeight: '800',
+    textAlign: 'center',
+    elevation: 2,
+    top: -112,
+    padding: 0
   }
 }
 
