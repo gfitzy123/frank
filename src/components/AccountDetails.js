@@ -3,19 +3,81 @@ import { View, Text, Image } from 'react-native';
 import NavBar from './NavBar';
 
 class AccountDetails extends Component {
-  
-  this.state = {
-    counter: 0
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      counter: 0
+    }
+  }
+
+  leapYear(year) {
+    return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
   }
 
   setCounter() {
     //We need to set a counter for how many days until a bill is due
-    let currentDate = Date.now();
-    let date = new Date();
-    let day = parseInt(currentDate / (1000 * 60 * 60 * 24));
+    let date = new Date().toDateString();
+    let currentMonth = date.substr(4, 3);
+    let currentDay = date.substr(8, 2);
+    let year = date.substr(11, 4);
 
-    let lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    let daysInMonth = 0;
 
+    switch(currentMonth) {
+      case 'Dec':
+        daysInMonth = 31;
+      break;
+      case 'Jan':
+        daysInMonth = 31;
+      break;
+      case 'Feb': 
+        if (this.leapYear) {
+          daysInMonth = 29;
+        } else {
+          daysInMonth = 28;
+        }
+      break;
+      case 'Mar':
+        daysInMonth = 31;
+      break;
+      case 'Apr':
+        daysInMonth = 30;
+      break;
+      case 'May':
+        daysInMonth = 31;
+      break;
+      case 'Jun':
+        daysInMonth = 30;
+      break;
+      case 'Jul':
+        daysInMonth = 31;
+      break;
+      case 'Aug':
+        daysInMonth = 31;
+      break;
+      case 'Sep':
+        daysInMonth = 30;
+      break;
+      case 'Oct':
+        daysInMonth = 31;
+      break;
+      case 'Nov':
+        daysInMonth = 30;
+      break;
+    }
+
+    currentDay = parseInt(currentDay);
+
+    let diff = daysInMonth - currentDay;
+
+    this.setState({
+      counter: diff
+    })
+  }
+
+  componentWillMount() {
+    this.setCounter();
   }
 
   render() {
@@ -28,6 +90,7 @@ class AccountDetails extends Component {
         <View style={styles.topViewStyle}>
           <Text style={styles.topTextStyle}>Days Until Next Payment</Text>
           <Image source={require('../img/donute.png')} accessibilityLabel="Amount of days until electric bill is due" />
+          <Text>{this.state.counter}</Text>
         </View>
         <View style={styles.bottomViewStyle}>
           <Text>Button Components goes here.</Text>
