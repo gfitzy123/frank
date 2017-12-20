@@ -97,6 +97,8 @@ class AccountDetails extends Component {
 
         <View style={styles.bottomViewStyle}>
 
+        <Image style={styles.imgStyle} source={require('../img/green-mtn.png')} accessibilityLabel="Green Energy Mountain" />
+
           <View style={styles.buttonContainerStyle}>
             <DisplayButton>
               Current Rate: 4.2c/kWh
@@ -111,6 +113,11 @@ class AccountDetails extends Component {
             </DisplayButton>
             <DisplayButton>
               Prev Bill: $4,427
+            </DisplayButton>
+          </View>
+          <View style={styles.loneButtonStyle}>
+            <DisplayButton>
+              YTD Savings: $12,725
             </DisplayButton>
           </View>
         </View>
@@ -130,7 +137,7 @@ const styles = {
   bottomViewStyle: {
     backgroundColor: '#f8fcff',
     padding: 20,
-    marginBottom: 50
+    marginBottom: 40
   },
   topTextStyle: {
     color: '#fff',
@@ -172,10 +179,18 @@ const styles = {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 50,
-    justifyContent: 'space-around',
-    flexDirection: 'row',
-    alignContent: 'flex-start'
+    marginBottom: 40,
+    marginTop: 10
+  },
+  loneButtonStyle: {
+    marginRight: 80,
+    marginLeft: 80,
+    paddingBottom: 0,
+    marginBottom: 20
+  },
+  imgStyle: {
+    alignSelf: 'center',
+    marginBottom: 15
   }
 }
 

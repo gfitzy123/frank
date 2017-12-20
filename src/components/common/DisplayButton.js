@@ -31,7 +31,7 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { width: 2, height: 3 },
     shadowOpacity: .5,
-    padding: 18
+    padding: 16
   }
 }
 
