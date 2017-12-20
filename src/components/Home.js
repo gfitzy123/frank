@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { CardSection, Button } from './common';
+import { CardSection, Button } from './common/Index';
 
 class Home extends Component {
   render() {
@@ -10,7 +10,7 @@ class Home extends Component {
         <View style={styles.imgContainerStyle}>
           <Image style={styles.imgStyle} source={require('../img/logo.png')} accessbilityLabel="Frank's logo" />
         </View>
-        <View style={{paddingTop: 200}}>
+        <View style={{ paddingTop: 200 }}>
           <Button onPress={() => Actions.auth()}>Sign In</Button>
         </View>
       </View>

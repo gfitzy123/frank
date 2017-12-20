@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import NavBar from './NavBar';
-import { DisplayButton } from './common';
+import { DisplayButton } from './common/Index';
 
 class AccountDetails extends Component {
   constructor(props) {
@@ -96,8 +96,10 @@ class AccountDetails extends Component {
         </View>
 
         <View style={styles.bottomViewStyle}>
-          <View style={styles.buttonContainerStyle}>
 
+        <Image style={styles.imgStyle} source={require('../img/green-mtn.png')} accessibilityLabel="Green Energy Mountain" />
+
+          <View style={styles.buttonContainerStyle}>
             <DisplayButton>
               Current Rate: 4.2c/kWh
             </DisplayButton>
@@ -113,14 +115,11 @@ class AccountDetails extends Component {
               Prev Bill: $4,427
             </DisplayButton>
           </View>
-
-            <DisplayButton>Current Rate: 4.2c/kWh</DisplayButton>
-            <DisplayButton>Prev Rate: 8.7c/kWh</DisplayButton>
-            
-            <DisplayButton>Current Bill: $2,123</DisplayButton>
-            <DisplayButton>Prev Bill: $4,427</DisplayButton>
+          <View style={styles.loneButtonStyle}>
+            <DisplayButton>
+              YTD Savings: $12,725
+            </DisplayButton>
           </View>
-
         </View>
         <NavBar />
       </View>
@@ -138,7 +137,7 @@ const styles = {
   bottomViewStyle: {
     backgroundColor: '#f8fcff',
     padding: 20,
-    marginBottom: 50
+    marginBottom: 40
   },
   topTextStyle: {
     color: '#fff',
@@ -180,10 +179,18 @@ const styles = {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 50
-    justifyContent: 'space-around',
-    flexDirection: 'row',
-    alignContent: 'flex-start'
+    marginBottom: 40,
+    marginTop: 10
+  },
+  loneButtonStyle: {
+    marginRight: 80,
+    marginLeft: 80,
+    paddingBottom: 0,
+    marginBottom: 20
+  },
+  imgStyle: {
+    alignSelf: 'center',
+    marginBottom: 15
   }
 }
 
