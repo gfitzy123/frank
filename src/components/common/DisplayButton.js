@@ -24,8 +24,6 @@ const styles = {
     fontSize: 12,
     fontWeight: '400',
     padding: 0
-    paddingTop: 5,
-    paddingBottom: 5
   },
   buttonStyle: {
     borderRadius: 10,
@@ -34,7 +32,6 @@ const styles = {
     shadowOffset: { width: 2, height: 3 },
     shadowOpacity: .5,
     padding: 18
-    padding: 8
   }
 }
 
