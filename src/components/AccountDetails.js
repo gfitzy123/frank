@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import NavBar from './NavBar';
-import { DisplayButton } from './common';
+import { DisplayButton } from './common/Index';
 
 class AccountDetails extends Component {
   constructor(props) {
