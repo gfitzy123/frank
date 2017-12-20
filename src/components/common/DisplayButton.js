@@ -23,6 +23,7 @@ const styles = {
     color: '#111',
     fontSize: 12,
     fontWeight: '400',
+    padding: 0
     paddingTop: 5,
     paddingBottom: 5
   },
@@ -32,6 +33,7 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { width: 2, height: 3 },
     shadowOpacity: .5,
+    padding: 18
     padding: 8
   }
 }

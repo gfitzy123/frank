@@ -97,12 +97,30 @@ class AccountDetails extends Component {
 
         <View style={styles.bottomViewStyle}>
           <View style={styles.buttonContainerStyle}>
+
+            <DisplayButton>
+              Current Rate: 4.2c/kWh
+            </DisplayButton>
+            <DisplayButton>
+              Prev Rate: 8.7c/kWh
+            </DisplayButton>
+          </View>
+          <View style={styles.buttonContainerStyle}>
+            <DisplayButton>
+              Current Bill: $2,123
+            </DisplayButton>
+            <DisplayButton>
+              Prev Bill: $4,427
+            </DisplayButton>
+          </View>
+
             <DisplayButton>Current Rate: 4.2c/kWh</DisplayButton>
             <DisplayButton>Prev Rate: 8.7c/kWh</DisplayButton>
             
             <DisplayButton>Current Bill: $2,123</DisplayButton>
             <DisplayButton>Prev Bill: $4,427</DisplayButton>
           </View>
+
         </View>
         <NavBar />
       </View>
@@ -159,6 +177,10 @@ const styles = {
     padding: 0
   },
   buttonContainerStyle: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 50
     justifyContent: 'space-around',
     flexDirection: 'row',
     alignContent: 'flex-start'
