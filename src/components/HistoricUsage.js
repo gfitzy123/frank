@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
+import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
   render() {
@@ -14,6 +15,7 @@ class HistoricUsage extends Component {
             <Text style={styles.shopTitleStyle}>John's Bicycle Shop</Text>
             <Text style={styles.subTitleStyle}>5 Minute Usage: 10 kWh</Text>
             <Text style={styles.subTitleStyle}>Last Month's Usage: 325 kWh</Text>
+            <UsageChart />
           </View>
           <View style={styles.bottomViewStyle}>
             <Text>Functional box slides go here.</Text>
