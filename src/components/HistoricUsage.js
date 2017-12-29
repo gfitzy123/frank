@@ -74,7 +74,7 @@ const styles = {
     textAlign: 'left',
     paddingLeft: 15,
     paddingRight: 15
-  }
+  },
 }
 
 export default HistoricUsage;
