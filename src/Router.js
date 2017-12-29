@@ -5,6 +5,7 @@ import Home from './components/Home';
 import LoginForm from './components/LoginForm';
 import Landing from './components/Landing';
 import AccountDetails from './components/AccountDetails';
+import HistoricUsage from './components/HistoricUsage';
 
 const RouterComponent = () => {
   return (
@@ -24,6 +25,10 @@ const RouterComponent = () => {
 
       <Scene key="account">
         <Scene key="accountDetails" component={AccountDetails} title="Home" hideNavBar />
+      </Scene>
+
+      <Scene key="usage">
+        <Scene key="historicalUsage" component={HistoricUsage} title="Historic Usage" hideNavBar />
       </Scene>
     </Router>
 

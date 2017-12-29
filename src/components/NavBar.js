@@ -9,7 +9,7 @@ class NavBar extends Component {
         <TouchableOpacity onPress={() => Actions.account()}>
           <Image source={require('../img/home.png')} accessibilityLabel="home icon" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Actions.usage()}>
           <Image source={require('../img/chart.png')} accessibilityLabel="chart icon" />
         </TouchableOpacity>
 
