@@ -168,7 +168,7 @@ const styles = {
   },
   counterStyle: {
     color: '#fff',
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: '800',
     textAlign: 'center',
     elevation: 2,
@@ -186,7 +186,7 @@ const styles = {
     marginRight: 80,
     marginLeft: 80,
     paddingBottom: 0,
-    marginBottom: 20
+    marginBottom: 32
   },
   imgStyle: {
     alignSelf: 'center',
