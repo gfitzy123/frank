@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -21,7 +21,7 @@ class HistoricUsage extends Component {
             <Text style={styles.subTitleStyle}>Last Month's Usage: 325 kWh</Text>
             <UsageChart />
           </View>
-          <View style={styles.slideContainer}>
+          <ScrollView contentContainerStyle={styles.slideContainer} horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.bottomViewStyle}>
               <Text>Functional box slides go here.</Text>
             </View>
@@ -33,7 +33,7 @@ class HistoricUsage extends Component {
             <View style={styles.bottomViewStyle}>
               <Text>Functional box slides go here.</Text>
             </View>
-        </View>
+          </ScrollView>
           <View>
             <Text>More account details here in slideable box form</Text>
           </View>
