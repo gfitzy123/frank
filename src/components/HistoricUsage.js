@@ -3,6 +3,10 @@ import { View, Text, Image } from 'react-native';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
+
+
+  //So I have to make slides that onPress drag, it switches.
+  //Easiest way is to call a JavaScript function
   render() {
     return(
       <View style={{ paddingTop: 25, backgroundColor: '#123c66' }}>
@@ -17,9 +21,19 @@ class HistoricUsage extends Component {
             <Text style={styles.subTitleStyle}>Last Month's Usage: 325 kWh</Text>
             <UsageChart />
           </View>
-          <View style={styles.bottomViewStyle}>
-            <Text>Functional box slides go here.</Text>
-          </View>
+          <View style={styles.slideContainer}>
+            <View style={styles.bottomViewStyle}>
+              <Text>Functional box slides go here.</Text>
+            </View>
+
+            <View style={styles.bottomViewStyle}>
+              <Text>Functional box slides go here.</Text>
+            </View>
+
+            <View style={styles.bottomViewStyle}>
+              <Text>Functional box slides go here.</Text>
+            </View>
+        </View>
           <View>
             <Text>More account details here in slideable box form</Text>
           </View>
@@ -40,6 +54,8 @@ const styles = {
     backgroundColor: '#f8fcff',
     padding: 20,
     marginBottom: 40,
+    marginLeft: 5,
+    marginRight: 5,
     borderRadius: 15
   },
   usageTextStyle: {
@@ -77,6 +93,10 @@ const styles = {
     paddingLeft: 15,
     paddingRight: 15
   },
+  slideContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  }
 }
 
 export default HistoricUsage;
