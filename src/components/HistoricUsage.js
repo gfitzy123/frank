@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView, Slider } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
+import Slider from 'react-native-slider';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -29,7 +30,7 @@ class HistoricUsage extends Component {
 
                 <View style={styles.slideTextStyle}>
                   <Text style={styles.meterNumStyle}>Meter Number 2</Text>
-                  <Slider style={{ width: 230, height: 30, borderRadius: 50 }} minimumTrackTintColor="#32CD32" disabled minimumValue={0} value={33} maximumValue={100} />
+                  <Slider style={{ width: 230 }} minimumTrackTintColor="#32CD32" disabled minimumValue={0} value={33} maximumValue={100} />
                   <Text style={styles.usagePercentStyle}>33% of historical usage</Text>
                 </View>
 
