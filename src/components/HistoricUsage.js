@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Slider } from 'react-native';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -22,15 +22,21 @@ class HistoricUsage extends Component {
             <View style={styles.slideContainerStyle}>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <View style={styles.slideTextStyle}>
-                  <Text>Functional box slides go here.</Text>
+                  <Text style={styles.meterNumStyle}>Meter Number 1</Text>
+                  <Slider style={{ width: 230 }} minimumTrackTintColor="#32CD32" disabled minimumValue={0} value={76} maximumValue={100} />
+                  <Text style={styles.usagePercentStyle}>76% of historical usage</Text>
                 </View>
 
                 <View style={styles.slideTextStyle}>
-                  <Text>Functional box slides go here.</Text>
+                  <Text style={styles.meterNumStyle}>Meter Number 2</Text>
+                  <Slider style={{ width: 230, height: 30, borderRadius: 50 }} minimumTrackTintColor="#32CD32" disabled minimumValue={0} value={33} maximumValue={100} />
+                  <Text style={styles.usagePercentStyle}>33% of historical usage</Text>
                 </View>
 
                 <View style={styles.slideTextStyle}>
-                  <Text>Functional box slides go here.</Text>
+                  <Text style={styles.meterNumStyle}>Meter Number 3</Text>
+                  <Slider style={{ width: 230 }} minimumTrackTintColor="#32CD32" disabled minimumValue={0} value={19.5} maximumValue={100} />
+                  <Text style={styles.usagePercentStyle}>19.5% of historical usage</Text>
                 </View>
               </ScrollView>
             </View>
@@ -103,7 +109,7 @@ const styles = {
   slideContainerStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
-    top: 70,
+    top: 80,
     elevation: 2,
   },
   lineStyle:{
@@ -114,7 +120,18 @@ const styles = {
     marginTop: 45,
     elevation: 1,
     position: 'relative'
-  }
+  },
+  meterNumStyle: {
+    fontSize: 18,
+    fontWeight: '400',
+    textAlign: 'left'
+  },
+  usagePercentStyle: {
+    fontSize: 14,
+    fontWeight: '800',
+    textAlign: 'right',
+    opacity: 0.6
+  },
 }
 
 export default HistoricUsage;
