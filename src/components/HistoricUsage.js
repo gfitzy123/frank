@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Slider from 'react-native-slider';
-// import InfoScroll from './InfoScroll';
+import Section from './common/Section';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -45,26 +45,25 @@ class HistoricUsage extends Component {
             </View>
         </View>
       </View>
-      <View style={{ backgroundColor: '#f8fcff', flex: 1 }}>
+      <View style={{ backgroundColor: '#f8fcff' }}>
         <View style={styles.lineStyle} />
-        {/* contentContainerStyle={styles.accountContainer} */}
-        <ScrollView>
-        <View style={styles.accountContainer}>
-            <View style={styles.accountTextStyle}>
+        <ScrollView contentContainerStyle={styles.accountContainer}>
+        <View>
+            <Section style={styles.accountTextStyle}>
               <Text>Account details here</Text>
-            </View>
+            </Section>
 
-            <View style={styles.accountTextStyle}>
+            <Section style={styles.accountTextStyle}>
               <Text>Account details here</Text>
-            </View>
+            </Section>
 
-            <View style={styles.accountTextStyle}>
+            <Section style={styles.accountTextStyle}>
               <Text>Account details here</Text>
-            </View>
+            </Section>
 
-            <View style={styles.accountTextStyle}>
+            <Section style={styles.accountTextStyle}>
               <Text>Account details here</Text>
-            </View>
+            </Section>
         </View>
       </ScrollView>
       </View>
@@ -153,19 +152,13 @@ const styles = {
     opacity: 0.6
   },
   accountContainer: {
-    top: 30,
-    elevation: 4,
-    borderColor: '#000',
-    borderWidth: 3,
-    flex: 1,
+    top: 25,
+    elevation: 3,
   },
   accountTextStyle: {
-    borderColor: '#badcab',
-    borderWidth: 6,
-    backgroundColor: '#badcab',
     padding: 15,
     marginTop: 5,
-    height: 50
+    fontSize: 16
   }
 }
 
