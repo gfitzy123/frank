@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Slider from 'react-native-slider';
-// import Section from './common/Section';
+// import InfoScroll from './InfoScroll';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -47,8 +47,8 @@ class HistoricUsage extends Component {
       </View>
       <View style={{ backgroundColor: '#f8fcff', flex: 1 }}>
         <View style={styles.lineStyle} />
-
-        {/* <ScrollView> */}
+        {/* contentContainerStyle={styles.accountContainer} */}
+        <ScrollView>
         <View style={styles.accountContainer}>
             <View style={styles.accountTextStyle}>
               <Text>Account details here</Text>
@@ -66,7 +66,7 @@ class HistoricUsage extends Component {
               <Text>Account details here</Text>
             </View>
         </View>
-      {/* </ScrollView> */}
+      </ScrollView>
       </View>
     </View>
     );
@@ -157,14 +157,15 @@ const styles = {
     elevation: 4,
     borderColor: '#000',
     borderWidth: 3,
-    flex: 1
+    flex: 1,
   },
   accountTextStyle: {
     borderColor: '#badcab',
     borderWidth: 6,
     backgroundColor: '#badcab',
     padding: 15,
-    marginTop: 5
+    marginTop: 5,
+    height: 50
   }
 }
 
