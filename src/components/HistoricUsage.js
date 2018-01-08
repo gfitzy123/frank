@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Slider from 'react-native-slider';
-import Section from './common/Section';
+// import Section from './common/Section';
 import UsageChart from './UsageChart';
 
 class HistoricUsage extends Component {
@@ -46,13 +46,28 @@ class HistoricUsage extends Component {
         </View>
       </View>
       <View style={{ backgroundColor: '#f8fcff', flex: 1 }}>
-        <View>
-          <View style={styles.lineStyle} />
+        <View style={styles.lineStyle} />
+
+        {/* <ScrollView> */}
+        <View style={styles.accountContainer}>
+            <View style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </View>
+
+            <View style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </View>
+
+            <View style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </View>
+
+            <View style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </View>
         </View>
+      {/* </ScrollView> */}
       </View>
-      <Section>
-        <Text>Account details here</Text>
-      </Section>
     </View>
     );
   }
@@ -137,6 +152,20 @@ const styles = {
     textAlign: 'right',
     opacity: 0.6
   },
+  accountContainer: {
+    top: 30,
+    elevation: 4,
+    borderColor: '#000',
+    borderWidth: 3,
+    flex: 1
+  },
+  accountTextStyle: {
+    borderColor: '#badcab',
+    borderWidth: 6,
+    backgroundColor: '#badcab',
+    padding: 15,
+    marginTop: 5
+  }
 }
 
 export default HistoricUsage;
