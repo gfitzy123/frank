@@ -45,14 +45,28 @@ class HistoricUsage extends Component {
             </View>
         </View>
       </View>
-      <View style={{ backgroundColor: '#f8fcff', flex: 1 }}>
+      <View style={{ backgroundColor: '#f8fcff' }}>
+        <View style={styles.lineStyle} />
+        <ScrollView contentContainerStyle={styles.accountContainer}>
         <View>
-          <View style={styles.lineStyle} />
+            <Section style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </Section>
+
+            <Section style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </Section>
+
+            <Section style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </Section>
+
+            <Section style={styles.accountTextStyle}>
+              <Text>Account details here</Text>
+            </Section>
         </View>
+      </ScrollView>
       </View>
-      <Section>
-        <Text>Account details here</Text>
-      </Section>
     </View>
     );
   }
@@ -137,6 +151,15 @@ const styles = {
     textAlign: 'right',
     opacity: 0.6
   },
+  accountContainer: {
+    top: 25,
+    elevation: 3,
+  },
+  accountTextStyle: {
+    padding: 15,
+    marginTop: 5,
+    fontSize: 16
+  }
 }
 
 export default HistoricUsage;
