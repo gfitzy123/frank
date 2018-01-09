@@ -45,7 +45,7 @@ class HistoricUsage extends Component {
             </View>
         </View>
       </View>
-      <View style={{ backgroundColor: '#f8fcff' }}>
+      <View style={{ backgroundColor: '#f8fcff', marginTop: 15 }}>
         <View style={styles.lineStyle} />
         <ScrollView contentContainerStyle={styles.accountContainer}>
         <View>
@@ -128,15 +128,15 @@ const styles = {
   slideContainerStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
-    top: 90,
-    elevation: 2,
+    top: 75,
+    elevation: 3,
   },
   lineStyle:{
     borderWidth: 0.6,
     borderColor: '#e2e0e0',
     marginLeft: 25,
     marginRight: 25,
-    marginTop: 45,
+    marginTop: 55,
     elevation: 1,
     position: 'relative'
   },
@@ -149,11 +149,12 @@ const styles = {
     fontSize: 14,
     fontWeight: '800',
     textAlign: 'right',
-    opacity: 0.6
+    opacity: 0.6,
+    elevation: 2
   },
   accountContainer: {
-    top: 25,
-    elevation: 3,
+    top: 35,
+    elevation: 2,
   },
   accountTextStyle: {
     padding: 15,
