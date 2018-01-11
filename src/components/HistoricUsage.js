@@ -3,6 +3,7 @@ import { View, Text, Image, ScrollView } from 'react-native';
 import Slider from 'react-native-slider';
 import Section from './common/Section';
 import UsageChart from './UsageChart';
+import NavBar from './NavBar';
 
 class HistoricUsage extends Component {
   render() {
@@ -48,57 +49,83 @@ class HistoricUsage extends Component {
       <View style={{ backgroundColor: '#f8fcff', marginTop: 15 }}>
         <View style={styles.lineStyle} />
 
-        <ScrollView style={{ top: 35, elevation: 2}}>
+        <ScrollView style={{ top: 20, elevation: 2 }}>
           <View style={{ flex: 1 }}>
             <Section>
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>08/19/2014</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
-                <Text style={{ flex: 1 }}>Bill: </Text>
-              </View>
-            </Section>
-
-            <Section>
-              <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
-              </View>
-
-              <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
-                <Text style={{ flex: 1 }}>Bill: </Text>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$26.92</Text></Text>
               </View>
             </Section>
 
             <Section>
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>10/18/2014</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
-                <Text style={{ flex: 1 }}>Bill: </Text>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$22.05</Text></Text>
               </View>
             </Section>
 
             <Section>
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>09/18/2014</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
-                <Text style={{ flex: 1 }}>Bill: </Text>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$23.15</Text></Text>
+              </View>
+            </Section>
+
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>07/17/2014</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$23.04</Text></Text>
+              </View>
+            </Section>
+
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>06/18/2014</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$26.49</Text></Text>
+              </View>
+            </Section>
+
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
+                <Text style={styles.rowTextStyle}>05/20/2014</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
+                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$29.94</Text></Text>
               </View>
             </Section>
           </View>
         </ScrollView>
+
+        <NavBar />
       </View>
     </View>
     );
@@ -196,6 +223,24 @@ const styles = {
     flexDirection: 'column',
     flexWrap: 'wrap'
   },
+  accountTextStyle: {
+    flex: 1,
+    fontWeight: '500',
+    fontSize: 16
+  },
+  savingsStyle: {
+    color: '#2CC197',
+    fontSize: 14
+  },
+  rowTextStyle: {
+    marginTop: 5,
+    flex: 1,
+    color: '#b7b9bc',
+    fontSize: 13
+  },
+  billAmountStyle: {
+    color: '#EE5A55'
+  }
 }
 
 export default HistoricUsage;
