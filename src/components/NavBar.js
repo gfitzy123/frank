@@ -41,11 +41,11 @@ const styles = {
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.7,
     paddingTop: 15,
-    height: 50, 
+    height: 50,
     elevation: 2, 
-    position: 'absolute', 
-    left: 0, 
-    bottom: 0, 
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
     right: 0
   },
   arrowStyle: {
