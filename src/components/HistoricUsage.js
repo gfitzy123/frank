@@ -45,27 +45,60 @@ class HistoricUsage extends Component {
             </View>
         </View>
       </View>
-      <View style={{ backgroundColor: '#f8fcff' }}>
+      <View style={{ backgroundColor: '#f8fcff', marginTop: 15 }}>
         <View style={styles.lineStyle} />
-        <ScrollView contentContainerStyle={styles.accountContainer}>
-        <View>
-            <Section style={styles.accountTextStyle}>
-              <Text>Account details here</Text>
+
+        <ScrollView style={{ top: 35, elevation: 2}}>
+          <View style={{ flex: 1 }}>
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>Account#: 123456</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Bill: </Text>
+              </View>
             </Section>
 
-            <Section style={styles.accountTextStyle}>
-              <Text>Account details here</Text>
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>Account#: 123456</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Bill: </Text>
+              </View>
             </Section>
 
-            <Section style={styles.accountTextStyle}>
-              <Text>Account details here</Text>
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>Account#: 123456</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Bill: </Text>
+              </View>
             </Section>
 
-            <Section style={styles.accountTextStyle}>
-              <Text>Account details here</Text>
+            <Section>
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>Account#: 123456</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+              </View>
+
+              <View style={styles.accountStyle}>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Bill: </Text>
+              </View>
             </Section>
-        </View>
-      </ScrollView>
+          </View>
+        </ScrollView>
       </View>
     </View>
     );
@@ -128,15 +161,15 @@ const styles = {
   slideContainerStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
-    top: 90,
-    elevation: 2,
+    top: 75,
+    elevation: 3,
   },
   lineStyle:{
     borderWidth: 0.6,
     borderColor: '#e2e0e0',
     marginLeft: 25,
     marginRight: 25,
-    marginTop: 45,
+    marginTop: 55,
     elevation: 1,
     position: 'relative'
   },
@@ -149,17 +182,20 @@ const styles = {
     fontSize: 14,
     fontWeight: '800',
     textAlign: 'right',
-    opacity: 0.6
+    opacity: 0.6,
+    elevation: 2
   },
   accountContainer: {
-    top: 25,
-    elevation: 3,
+    top: 35,
+    elevation: 2,
   },
-  accountTextStyle: {
-    padding: 15,
+  accountStyle: {
+    padding: 5,
     marginTop: 5,
-    fontSize: 16
-  }
+    flex: 1,
+    flexDirection: 'column',
+    flexWrap: 'wrap'
+  },
 }
 
 export default HistoricUsage;
