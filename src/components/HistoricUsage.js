@@ -53,11 +53,11 @@ class HistoricUsage extends Component {
             <Section>
               <View style={styles.accountStyle}>
                 <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
                 <Text style={{ flex: 1 }}>Bill: </Text>
               </View>
             </Section>
@@ -65,11 +65,11 @@ class HistoricUsage extends Component {
             <Section>
               <View style={styles.accountStyle}>
                 <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
                 <Text style={{ flex: 1 }}>Bill: </Text>
               </View>
             </Section>
@@ -77,11 +77,11 @@ class HistoricUsage extends Component {
             <Section>
               <View style={styles.accountStyle}>
                 <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
                 <Text style={{ flex: 1 }}>Bill: </Text>
               </View>
             </Section>
@@ -89,11 +89,11 @@ class HistoricUsage extends Component {
             <Section>
               <View style={styles.accountStyle}>
                 <Text style={{ flex: 1 }}>Account#: 123456</Text>
-                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
+                <Text style={{ flex: 1 }}>17-01-08</Text>
               </View>
 
               <View style={styles.accountStyle}>
-                <Text style={{ flex: 1 }}>17-01-08</Text>
+                <Text style={{ flex: 1 }}>Savings: $12,000</Text>
                 <Text style={{ flex: 1 }}>Bill: </Text>
               </View>
             </Section>
