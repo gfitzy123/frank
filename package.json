@@ -8,7 +8,11 @@
     "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js"
   },
   "dependencies": {
+    "art": "^0.10.1",
     "axios": "^0.17.1",
+    "d3-array": "^1.2.1",
+    "d3-scale": "^1.0.7",
+    "d3-shape": "^1.2.0",
     "firebase": "^4.8.0",
     "react": "16.0.0",
     "react-native": "0.51.0",
