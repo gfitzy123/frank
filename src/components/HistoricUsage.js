@@ -46,10 +46,10 @@ class HistoricUsage extends Component {
             </View>
         </View>
       </View>
-      <View style={{ backgroundColor: '#f8fcff', marginTop: 15 }}>
+      <View style={{ backgroundColor: '#f8fcff', marginTop: 10 }}>
         <View style={styles.lineStyle} />
 
-        <ScrollView style={{ top: 20, elevation: 2 }}>
+        <ScrollView style={{ top: 10, elevation: 2 }}>
           <View style={{ flex: 1 }}>
             <Section>
               <View style={styles.accountStyle}>
@@ -87,44 +87,8 @@ class HistoricUsage extends Component {
               </View>
             </Section>
 
-            <Section>
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
-                <Text style={styles.rowTextStyle}>07/17/2014</Text>
-              </View>
-
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
-                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$23.04</Text></Text>
-              </View>
-            </Section>
-
-            <Section>
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
-                <Text style={styles.rowTextStyle}>06/18/2014</Text>
-              </View>
-
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
-                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$26.49</Text></Text>
-              </View>
-            </Section>
-
-            <Section>
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Account#: c2bad325</Text>
-                <Text style={styles.rowTextStyle}>05/20/2014</Text>
-              </View>
-
-              <View style={styles.accountStyle}>
-                <Text style={styles.accountTextStyle}>Savings: <Text style={styles.savingsStyle}>$10.79</Text></Text>
-                <Text style={styles.rowTextStyle}>Bill: <Text style={styles.billAmountStyle}>$29.94</Text></Text>
-              </View>
-            </Section>
           </View>
         </ScrollView>
-
         <NavBar />
       </View>
     </View>
@@ -136,12 +100,11 @@ const styles = {
   topViewStyle: {
     backgroundColor: '#123c66',
     paddingTop: 3,
-    paddingBottom: 40
+    paddingBottom: 20
   },
   bottomViewStyle: {
     backgroundColor: '#f8fcff',
     padding: 20,
-    marginBottom: 40
   },
   slideTextStyle: {
     backgroundColor: '#fff',
@@ -188,15 +151,16 @@ const styles = {
   slideContainerStyle: {
     flexDirection: 'row',
     justifyContent: 'center',
-    top: 75,
+    top: 45,
     elevation: 3,
+    bottom: 20
   },
   lineStyle:{
     borderWidth: 0.6,
     borderColor: '#e2e0e0',
     marginLeft: 25,
     marginRight: 25,
-    marginTop: 55,
+    marginTop: 25,
     elevation: 1,
     position: 'relative'
   },
