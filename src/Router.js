@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm';
 import Landing from './components/Landing';
 import AccountDetails from './components/AccountDetails';
 import HistoricUsage from './components/HistoricUsage';
+import Map from './components/Map.js';
 
 const RouterComponent = () => {
   return (
@@ -29,6 +30,10 @@ const RouterComponent = () => {
 
       <Scene key="usage">
         <Scene key="historicalUsage" component={HistoricUsage} title="Historic Usage" hideNavBar />
+      </Scene>
+
+      <Scene key="map">
+        <Scene key="mapDetails" component={Map} hideNavBar title="Map" />
       </Scene>
     </Router>
 

@@ -19,7 +19,7 @@ class NavBar extends Component {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Actions.map()}>
           <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
         </TouchableOpacity>
         <TouchableOpacity>
@@ -42,7 +42,7 @@ const styles = {
     shadowOpacity: 0.7,
     paddingTop: 15,
     height: 50,
-    elevation: 2, 
+    elevation: 2,
     position: 'absolute',
     left: 0,
     bottom: 0,
