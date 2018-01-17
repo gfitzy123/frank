@@ -7,7 +7,8 @@ class Map extends Component {
     return (
       <View>
         <MapHeader headerText="Find Meters" />
-        <Image style={styles.mapMarkerStyle} source={require('../img/map-mark.png')} />
+        <Image style={styles.markerOneStyle} source={require('../img/map-mark.png')} />
+        <Image style={styles.markerTwoStyle} source={require('../img/map-mark.png')} />
         <Image
           source={require('../img/map-img.png')}
         />
@@ -17,10 +18,16 @@ class Map extends Component {
 }
 
 const styles = {
-  mapMarkerStyle: {
+  markerOneStyle: {
     // elevation: 2,
-    top: 100,
-    left: 80,
+    top: 110,
+    left: 90,
+    position: 'absolute',
+  },
+  markerTwoStyle: {
+    // elevation: 2,
+    top: 200,
+    left: 300,
     position: 'absolute',
   }
 }
