@@ -4,11 +4,6 @@ import Data from '../data.json';
 import Svg from "react-native-svg";
 import {
   VictoryLine,
-  VictoryChart,
-  VictoryLegend,
-  VictoryLabel,
-  VictoryStack,
-  VictoryArea
 } from 'victory-native';
 import { VictoryTheme } from "victory-core";
 
@@ -16,7 +11,7 @@ class UsageChart extends Component {
   render() {
     return (
       <View>
-        {/* x= ConsumptionCharges y=TotalNewCharges */}
+        {/* x = EndDate y = Consumption */}
         <VictoryLine
           height={140}
           width={400}
@@ -24,31 +19,76 @@ class UsageChart extends Component {
             data: { stroke: "#02b3a4" }
           }}
           data={[
-            { x: 1, y: 2},
-            { x: 23.9, y: 26.92 },
-            { x: 19.57, y: 22.05 },
-            { x: 20.55, y: 23.15 },
-            { x: 20.46, y: 23.04 },
-            { x: 23.52, y: 26.49 },
-            { x: 26.58, y: 29.94 },
-            { x: 27.74, y: 31.25 },
-            { x: 20.21, y: 22.77 },
-            { x: 27.35, y: 30.8 },
-            { x: 23.57, y: 26.55 },
-            { x: 19.13, y: 21.55 },
-            { x: 18.23, y: 20.53 },
-            { x: 24.32, y: 27.39 },
-            { x: 26.42, y: 29.76 },
-            { x: 26.19, y: 29.5 },
-            { x: 20.69, y: 23.31 },
-            { x: 20.02, y: 17.78 },
-            { x: 22.32, y: 25.13 },
-            { x: 22.32, y: 25.13 },
-            { x: 2962.03, y: 18683.1 },
-            { x: -353.48, y: 18376.08 },
-            { x: -392.48, y: 18336.97 },
-            { x: -301.6, y: 15826.58 },
+            { x: "08/19/2014", y: 414},
+            { x: "10/18/2014", y: 333 },
+            { x: "09/18/2014", y: 348 },
+            { x: "07/17/2014", y: 327 },
+            { x: "06/18/2014", y: 380 },
+            { x: "05/20/2014", y: 419 },
+            { x: "01/18/2014", y: 399 },
+            { x: "04/17/2014", y: 316 },
+            { x: "03/20/2014", y: 345 },
+            { x: "11/16/2013", y: 400 },
+            { x: "07/18/2015", y: 335 },
+            { x: "12/16/2015", y: 311 },
+            { x: "11/18/2015", y: 422 },
+            { x: "01/19/2016", y: 422 },
+            { x: "02/17/2016", y: 376 },
+            { x: "03/18/2016", y: 325 },
+            { x: "10/16/2013", y: 307 },
+            { x: "01/25/2016", y: 350 },
+            { x: "11/24/2015", y: 350 },
+            { x: "12/24/2015", y: 350 },
+            { x: "02/23/2016", y: 350 },
+            { x: "03/24/2016", y: 350 },
+            { x: "04/22/2016", y: 350 },
+            { x: "01/04/2016", y: 1166416.8 },
+            { x: "12/02/2015", y: 1974689.1 },
+            { x: "02/03/2016", y: 1767388.8 },
+            { x: "03/07/2016", y: 1962416 },
+            { x: "04/01/2016", y: 1507978.8 },
           ]}
+          x="Data.EndDate"
+          // labels={(x, y) => {
+          //   switch(x.slice(0, 2)) {
+          //     case '01':
+          //       x = 'Jan';
+          //     break;
+          //     case '02':
+          //       x = 'Feb';
+          //     break;
+          //     case '03':
+          //       x = 'Mar';
+          //     break;
+          //     case '04':
+          //       x = 'Apr';
+          //     break;
+          //     case '05':
+          //       x = 'May';
+          //     break;
+          //     case '06':
+          //       x = 'Jun';
+          //     break;
+          //     case '07':
+          //       x = 'Jul';
+          //     break;
+          //     case '08':
+          //       x = 'Aug';
+          //     break;
+          //     case '09':
+          //       x = 'Sept';
+          //     break;
+          //     case '10':
+          //       x = 'Oct';
+          //     break;
+          //     case '11':
+          //       x = 'Nov';
+          //     break;
+          //     case '12':
+          //       x = 'Dec';
+          //     break;
+          //   }
+          // }}
         />
       </View>
     );
