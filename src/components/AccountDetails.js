@@ -32,7 +32,7 @@ class AccountDetails extends Component {
       case 'Jan':
         daysInMonth = 31;
       break;
-      case 'Feb': 
+      case 'Feb':
         if (this.leapYear) {
           daysInMonth = 29;
         } else {

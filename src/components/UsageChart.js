@@ -1,55 +1,142 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import Data from '../data.json';
 import Svg from "react-native-svg";
 import {
-  VictoryLine,
+  VictoryBar,
   VictoryChart,
-  VictoryLegend,
-  VictoryLabel,
-  VictoryStack,
-  VictoryArea
+  VictoryLine,
+  VictoryAxis
 } from 'victory-native';
 import { VictoryTheme } from "victory-core";
 
 class UsageChart extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  _getFirstLetterOfMonth(x) {
+    let check = x.slice(0, 2);
+
+    switch(check) {
+      case '01':
+        x = 'Jan';
+      break;
+      case '02':
+        x = 'Feb';
+      break;
+      case '03':
+        x = 'Mar';
+      break;
+      case '04':
+        x = 'Apr';
+      break;
+      case '05':
+        x = 'May';
+      break;
+      case '06':
+        x = 'Jun';
+      break;
+      case '07':
+        x = 'Jul';
+      break;
+      case '08':
+        x = 'Aug';
+      break;
+      case '09':
+        x = 'Sept';
+      break;
+      case '10':
+        x = 'Oct';
+      break;
+      case '11':
+        x = 'Nov';
+      break;
+      case '12':
+        x = 'Dec';
+      break;
+    }
+    return x;
+  }
+
   render() {
+    var data = [
+      { x: this._getFirstLetterOfMonth("08/19/2014"), y: 414},
+      { x: this._getFirstLetterOfMonth("10/18/2014"), y: 333 },
+      { x: this._getFirstLetterOfMonth("09/18/2014"), y: 348 },
+      { x: this._getFirstLetterOfMonth("07/17/2014"), y: 327 },
+      { x: this._getFirstLetterOfMonth("06/18/2014"), y: 380 },
+      { x: this._getFirstLetterOfMonth("05/20/2014"), y: 419 },
+      { x: this._getFirstLetterOfMonth("01/18/2014"), y: 399 },
+      { x: this._getFirstLetterOfMonth("04/17/2014"), y: 316 },
+      { x: this._getFirstLetterOfMonth("03/20/2014"), y: 345 },
+      { x: this._getFirstLetterOfMonth("11/16/2013"), y: 400 },
+      { x: this._getFirstLetterOfMonth("07/18/2015"), y: 335 },
+      { x: this._getFirstLetterOfMonth("12/16/2015"), y: 311 },
+      { x: this._getFirstLetterOfMonth("11/18/2015"), y: 422 },
+      { x: this._getFirstLetterOfMonth("01/19/2016"), y: 422 },
+      { x: this._getFirstLetterOfMonth("02/17/2016"), y: 376 },
+      { x: this._getFirstLetterOfMonth("03/18/2016"), y: 325 },
+      { x: this._getFirstLetterOfMonth("10/16/2013"), y: 307 },
+      { x: this._getFirstLetterOfMonth("01/25/2016"), y: 350 },
+      { x: this._getFirstLetterOfMonth("11/24/2015"), y: 350 },
+      { x: this._getFirstLetterOfMonth("12/24/2015"), y: 350 },
+      { x: this._getFirstLetterOfMonth("02/23/2016"), y: 350 },
+      { x: this._getFirstLetterOfMonth("03/24/2016"), y: 350 },
+      { x: this._getFirstLetterOfMonth("04/22/2016"), y: 350 },
+    ]
+
+    // console.log(data)
+
     return (
-      <View>
-        {/* x= ConsumptionCharges y=TotalNewCharges */}
-        <VictoryLine
-          height={140}
-          width={400}
-          style={{
-            data: { stroke: "#02b3a4" }
-          }}
-          data={[
-            { x: 1, y: 2},
-            { x: 23.9, y: 26.92 },
-            { x: 19.57, y: 22.05 },
-            { x: 20.55, y: 23.15 },
-            { x: 20.46, y: 23.04 },
-            { x: 23.52, y: 26.49 },
-            { x: 26.58, y: 29.94 },
-            { x: 27.74, y: 31.25 },
-            { x: 20.21, y: 22.77 },
-            { x: 27.35, y: 30.8 },
-            { x: 23.57, y: 26.55 },
-            { x: 19.13, y: 21.55 },
-            { x: 18.23, y: 20.53 },
-            { x: 24.32, y: 27.39 },
-            { x: 26.42, y: 29.76 },
-            { x: 26.19, y: 29.5 },
-            { x: 20.69, y: 23.31 },
-            { x: 20.02, y: 17.78 },
-            { x: 22.32, y: 25.13 },
-            { x: 22.32, y: 25.13 },
-            { x: 2962.03, y: 18683.1 },
-            { x: -353.48, y: 18376.08 },
-            { x: -392.48, y: 18336.97 },
-            { x: -301.6, y: 15826.58 },
-          ]}
-        />
+      <View style={{ height: 135}}>
+        {/* x = EndDate y = Consumption */}
+        <Svg
+          style={{ flex: 1, marginTop: 0, paddingTop: 0 }}
+          height={200}
+          width={300}
+          viewBox={"0 0 140 350"}
+          preserveAspectRatio="none"
+          >
+          <VictoryChart
+            domainPadding={15}
+            style={{
+              ticks: { fill: '#fff' },
+              tickLabels: { fill: '#fff' },
+            }}
+            height={175}
+            width={385}
+          >
+            <VictoryAxis
+              style={{
+                axis: { stroke: "#02b3a4" },
+                ticks: { fill: "#fff" },
+                tickLabels: { fill: '#fff' }
+              }}
+              // label="Month"
+              fixLabelOverlap={true}
+            />
+            <VictoryAxis
+              style={{
+                axis: { stroke: "#02b3a4" },
+                ticks: { fill: "#fff" },
+                tickLabels: { fill: '#fff' }
+              }}
+              tickValues={[0]}
+              tickFormat={(ticks) => ticks + ' kWh' }
+              dependentAxis
+              // label="kWh"
+              fixLabelOverlap={true}
+            />
+
+            <VictoryBar
+              style={{
+                data: { stroke: "#02b3a4", fill: "#000" }
+              }}
+              data={data}
+            />
+          </VictoryChart>
+        </Svg>
       </View>
     );
   }
