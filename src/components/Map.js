@@ -7,6 +7,7 @@ import {
   ScrollView
 } from 'react-native';
 import { MapHeader } from './common/Index';
+import NavBar from './NavBar';
 
 class Map extends Component {
   render() {
@@ -14,9 +15,10 @@ class Map extends Component {
       <View>
         <MapHeader headerText="Find Meters" />
         <Image
-          style={{ width: 450, height: 700 }}
+          style={{ width: 450, height: 615, marginBottom: 50 }}
           source={require('../img/MapHolder.png')}
         />
+        <NavBar />
       </View>
     );
   }
