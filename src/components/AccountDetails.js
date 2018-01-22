@@ -90,7 +90,7 @@ class AccountDetails extends Component {
         </View>
 
         <View style={styles.topViewStyle}>
-          <Text style={styles.topTextStyle}>Days Until Next Payment</Text>
+          <Text style={styles.topTextStyle}>Days Until Contract Renewal</Text>
           <Image style={styles.donuteStyle} source={require('../img/donute.png')} accessibilityLabel="Amount of days until electric bill is due" />
           <Text style={styles.counterStyle}>{this.state.counter}</Text>
         </View>
@@ -101,23 +101,23 @@ class AccountDetails extends Component {
 
           <View style={styles.buttonContainerStyle}>
             <DisplayButton>
-              Current Rate: 4.2c/kWh
+              Current Rate: <Text style={styles.greenTextStyle}>4.2c/kWh</Text>
             </DisplayButton>
             <DisplayButton>
-              Prev Rate: 8.7c/kWh
+              Prev Rate: <Text style={styles.redTextStyle}>8.7c/kWh</Text>
             </DisplayButton>
           </View>
           <View style={styles.buttonContainerStyle}>
             <DisplayButton>
-              Current Bill: $2,123
+              Current Bill: <Text style={styles.greenTextStyle}>$2,123</Text>
             </DisplayButton>
             <DisplayButton>
-              Prev Bill: $4,427
+              Prev Bill: <Text style={styles.redTextStyle}>$4,427</Text>
             </DisplayButton>
           </View>
           <View style={styles.loneButtonStyle}>
             <DisplayButton>
-              YTD Savings: $12,725
+              YTD Savings: <Text style={styles.greenTextStyle}>$12,725</Text>
             </DisplayButton>
           </View>
         </View>
@@ -178,19 +178,29 @@ const styles = {
   buttonContainerStyle: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     marginBottom: 40,
-    marginTop: 10
+    marginTop: 15
   },
   loneButtonStyle: {
     marginRight: 80,
     marginLeft: 80,
-    paddingBottom: 0,
-    marginBottom: 32
+    marginBottom: 26,
+    marginTop: 14
   },
   imgStyle: {
     alignSelf: 'center',
     marginBottom: 15
+  },
+  greenTextStyle: {
+    color: '#02b3a4',
+    fontSize: 11,
+    fontWeight: '400'
+  },
+  redTextStyle: {
+    color: '#ee5a55',
+    fontSize: 11,
+    fontWeight: '400'
   }
 }
 

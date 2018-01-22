@@ -19,19 +19,23 @@ const DisplayButton = ({ onPress, children }) => {
 
 const styles = {
   textStyle: {
-    alignSelf: 'center',
-    color: '#111',
+    alignSelf: 'flex-start',
+    color: '#000',
     fontSize: 12,
-    fontWeight: '400',
-    padding: 0
+    margin: 0,
+    padding: 0,
+    backgroundColor: 'transparent',
+    textAlign: 'center'
   },
   buttonStyle: {
-    borderRadius: 10,
-    backgroundColor: '#eee',
+    borderRadius: 5,
+    backgroundColor: '#f7f7f7',
     shadowColor: '#000',
-    shadowOffset: { width: 2, height: 3 },
+    shadowOffset: { width: 3, height: 4 },
     shadowOpacity: .5,
-    padding: 16
+    padding: 10,
+    height: 35,
+    width: 150
   }
 }
 
