@@ -29,7 +29,7 @@ const styles = {
   buttonStyle: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#123c66',
+    backgroundColor: 'transparent',
     borderRadius: 10,
     marginLeft: 5,
     marginRight: 5
