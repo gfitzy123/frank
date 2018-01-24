@@ -100,10 +100,6 @@ class UsageChart extends Component {
           >
           <VictoryChart
             domainPadding={15}
-            style={{
-              ticks: { fill: '#fff' },
-              tickLabels: { fill: '#fff' },
-            }}
             height={175}
             width={385}
           >
@@ -113,7 +109,6 @@ class UsageChart extends Component {
                 ticks: { fill: "#fff" },
                 tickLabels: { fill: '#fff' }
               }}
-              // label="Month"
               fixLabelOverlap={true}
             />
             <VictoryAxis
@@ -125,7 +120,6 @@ class UsageChart extends Component {
               tickValues={[0]}
               tickFormat={(ticks) => ticks + ' kWh' }
               dependentAxis
-              // label="kWh"
               fixLabelOverlap={true}
             />
 

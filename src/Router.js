@@ -6,7 +6,8 @@ import LoginForm from './components/LoginForm';
 import Landing from './components/Landing';
 import AccountDetails from './components/AccountDetails';
 import HistoricUsage from './components/HistoricUsage';
-import Map from './components/Map.js';
+import Map from './components/Map';
+import ChatSupport from './components/ChatSupport';
 
 const RouterComponent = () => {
   return (
@@ -34,6 +35,10 @@ const RouterComponent = () => {
 
       <Scene key="map">
         <Scene key="mapDetails" component={Map} hideNavBar title="Map" />
+      </Scene>
+
+      <Scene key="chat">
+        <Scene key="chatSupport" component={ChatSupport} hideNavBar title="Support" />
       </Scene>
     </Router>
 
