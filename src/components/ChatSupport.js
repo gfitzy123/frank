@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TextInput } from 'react-native';
 import NavBar from './NavBar';
+// import { Input, CardSection } from './common/Index';
 
 class ChatSupport extends Component {
   render() {
@@ -19,11 +20,14 @@ class ChatSupport extends Component {
               style={styles.imgStyle}
               source={{ uri: 'https://amylynnjorgensen.files.wordpress.com/2013/10/amy-profile.jpg' }}
             />
-            <View style={styles.chatBoxStyle}>
-              <Text style={styles.supportTextStyle}>Hey, I'm Sandra. How can I help you today?</Text>
+            <View style={{ marginBottom: 300 }}>
+              <View style={styles.chatBoxStyle}>
+                <Text style={styles.supportTextStyle}>Hey, I'm Sandra. How can I help you today?</Text>
+              </View>
+              <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
             </View>
-          </View>
-          <Text writingDirection="ltr" style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
+        </View>
+
         {/* <NavBar /> */}
       </View>
     );
@@ -40,26 +44,27 @@ const styles = {
     height: 50,
     width: 50,
     marginTop: 20,
-    marginLeft: 20,
-    borderRadius: 20
+    marginLeft: 65,
+    borderRadius: 15,
+    borderColor: '#ddd'
   },
   lineStyle:{
     borderWidth: 0.6,
     borderColor: '#e2e2e2',
     marginLeft: 50,
     marginRight: 50,
-    marginTop: 10,
+    marginTop: 10
   },
   supportNameStyle: {
     fontSize: 10,
-    fontWeight: '200',
+    fontWeight: '300',
     alignSelf: 'flex-end',
-    marginRight: 25
+    marginRight: 70,
+    marginTop: 10,
+    backgroundColor: 'transparent'
   },
   supportTextStyle: {
-    fontSize: 12,
-    fontWeight: '500',
-    alignSelf: 'flex-end'
+    fontSize: 12
   },
   chatBoxStyle: {
     borderWidth: 1,
@@ -69,10 +74,11 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    marginTop: 10,
+    marginTop: 30,
+    marginRight: 70,
     backgroundColor: '#e0ecff',
     borderRadius: 20,
-    padding: 10
+    padding: 20
   },
   containerStyle: {
     flex: 1,
