@@ -22,7 +22,7 @@ class NavBar extends Component {
         <TouchableOpacity onPress={() => Actions.map()}>
           <Image source={require('../img/map-marker.png')} accessibilityLabel="map icon" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Actions.chat()}>
           <Image source={require('../img/mail.png')} accessibilityLabel="mail icon" />
         </TouchableOpacity>
       </View>
