@@ -1,15 +1,72 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TextInput } from 'react-native';
 import NavBar from './NavBar';
-// import { Input, CardSection } from './common/Index';
+import Section from './common/Section';
+import { Input } from './common/Index';
 
 class ChatSupport extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isSandraTyping: true,
+      isMessageDisplayed: false,
+      sandraMessage: '',
+      chatboxMessage: '',
+      display: 'none'
+    }
+    this._SandraTyping.bind(this);
+    // this._ShowMessage.bind(this);
+  }
+
+  // _ShowMessage() {
+  //   console.log('In function _ShowMessage')
+  //   this.setState({
+  //     isSandraTyping: false,
+  //     isMessageDisplayed: true
+  //   })
+  //
+  //   this._SandraTyping();
+  // }
+
+  _SandraTyping() {
+    if(this.state.isSandraTyping === true) {
+      console.log(this.state)
+      //if sandra is typing, set the message to typing
+      this.setState({
+        sandraMessage: 'Sandra is typing...'
+      })
+      setTimeout(() => {
+        console.log('in set TIMEOUT')
+        this.setState({
+          isSandraTyping: false,
+          isMessageDisplayed: true
+        })
+
+        this._SandraTyping();
+      }, 10000)
+    } else if(this.state.isSandraTyping === false) {
+        this.setState({
+          sandraMessage: '',
+          chatboxMessage: 'Hey, I\'m Sandra. How can I help you today?'
+        })
+    }
+  }
+
+  componentWillMount() {
+    this._SandraTyping();
+  }
+
   render() {
     //get today's date
     let date = new Date().toDateString();
     let currentMonth = date.slice(3, 7);
     let currentDay = date.slice(7, 10);
     let currentYear = date.slice(10, 15);
+
+    //Create function for "Sandra is typing..." when the user first enters
+    //the screen before the automated text appears
+    //Might consider using state
+
 
     return (
       <View style={{ paddingTop: 25 }}>
@@ -22,13 +79,21 @@ class ChatSupport extends Component {
             />
             <View style={{ marginBottom: 300 }}>
               <View style={styles.chatBoxStyle}>
-                <Text style={styles.supportTextStyle}>Hey, I'm Sandra. How can I help you today?</Text>
+                <Text style={styles.supportTextStyle}>{this.state.chatboxMessage}</Text>
+                {/* Hey, I'm Sandra. How can I help you today? */}
               </View>
+              <Text>{this.state.sandraMessage}</Text>
               <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
             </View>
         </View>
-
-        {/* <NavBar /> */}
+        <View style={{ marginTop: 400, marginBottom: 80 }}>
+          <Section>
+            <TextInput
+              placeholder="Type your question here"
+            />
+          </Section>
+        </View>
+        <NavBar />
       </View>
     );
   }
@@ -64,7 +129,7 @@ const styles = {
     backgroundColor: 'transparent'
   },
   supportTextStyle: {
-    fontSize: 12
+    fontSize: 13
   },
   chatBoxStyle: {
     borderWidth: 1,
@@ -84,7 +149,8 @@ const styles = {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    marginBottom: 100
   }
 }
 
