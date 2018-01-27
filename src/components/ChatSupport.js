@@ -12,37 +12,29 @@ class ChatSupport extends Component {
       isMessageDisplayed: false,
       sandraMessage: '',
       chatboxMessage: '',
-      display: 'none'
+      display: 'flex'
     }
     this._SandraTyping.bind(this);
-    // this._ShowMessage.bind(this);
   }
-
-  // _ShowMessage() {
-  //   console.log('In function _ShowMessage')
-  //   this.setState({
-  //     isSandraTyping: false,
-  //     isMessageDisplayed: true
-  //   })
-  //
-  //   this._SandraTyping();
-  // }
 
   _SandraTyping() {
     if(this.state.isSandraTyping === true) {
       console.log(this.state)
       //if sandra is typing, set the message to typing
       this.setState({
-        sandraMessage: 'Sandra is typing...'
+        sandraMessage: 'Sandra is typing...',
+        display: 'none'
       })
       setTimeout(() => {
         console.log('in set TIMEOUT')
         this.setState({
           isSandraTyping: false,
-          isMessageDisplayed: true
+          isMessageDisplayed: true,
+          display: 'flex'
         })
 
         this._SandraTyping();
+
       }, 10000)
     } else if(this.state.isSandraTyping === false) {
         this.setState({
@@ -65,8 +57,9 @@ class ChatSupport extends Component {
 
     //Create function for "Sandra is typing..." when the user first enters
     //the screen before the automated text appears
-    //Might consider using state
 
+    let displayToggle = this.state.display;
+    console.log('display toggle, ', displayToggle)
 
     return (
       <View style={{ paddingTop: 25 }}>
@@ -78,12 +71,14 @@ class ChatSupport extends Component {
               source={{ uri: 'https://amylynnjorgensen.files.wordpress.com/2013/10/amy-profile.jpg' }}
             />
             <View style={{ marginBottom: 300 }}>
-              <View style={styles.chatBoxStyle}>
-                <Text style={styles.supportTextStyle}>{this.state.chatboxMessage}</Text>
-                {/* Hey, I'm Sandra. How can I help you today? */}
+              <View style={{ display: displayToggle }}>
+                <View style={styles.chatBoxStyle}>
+                  <Text style={styles.supportTextStyle}>{this.state.chatboxMessage}</Text>
+                  {/* Hey, I'm Sandra. How can I help you today? */}
+                  <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
+                </View>
               </View>
-              <Text>{this.state.sandraMessage}</Text>
-              <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
+              <Text style={styles.typingStyle}>{this.state.display === 'none' ? this.state.sandraMessage : ''}</Text>
             </View>
         </View>
         <View style={{ marginTop: 400, marginBottom: 80 }}>
@@ -98,6 +93,7 @@ class ChatSupport extends Component {
     );
   }
 }
+
 
 const styles = {
   titleStyle: {
@@ -124,7 +120,7 @@ const styles = {
     fontSize: 10,
     fontWeight: '300',
     alignSelf: 'flex-end',
-    marginRight: 70,
+    marginRight: 5,
     marginTop: 10,
     backgroundColor: 'transparent'
   },
@@ -143,14 +139,20 @@ const styles = {
     marginRight: 70,
     backgroundColor: '#e0ecff',
     borderRadius: 20,
-    padding: 20
+    padding: 20,
   },
   containerStyle: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginBottom: 100
+    marginBottom: 100,
+  },
+  typingStyle: {
+    marginTop: 40,
+    fontSize: 10,
+    fontWeight: '300',
+    backgroundColor: 'transparent'
   }
 }
 
