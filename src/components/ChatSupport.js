@@ -2,20 +2,44 @@ import React, { Component } from 'react';
 import { View, Text, Image, TextInput } from 'react-native';
 import NavBar from './NavBar';
 import Section from './common/Section';
-import { Input, TurqButton } from './common/Index';
+import { TurqButton } from './common/Index';
 
 class ChatSupport extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isSandraTyping: true,
-      isMessageDisplayed: false,
+      // isMessageDisplayed: false,
       sandraMessage: '',
       chatboxLeftMessage: '',
       display: 'none',
-      userText: ''
+      userText: '',
+      userTypeMessage: '',
+      userDisplay: 'none',
+      chatboxRightMessage: ''
     }
     this._SandraTyping.bind(this);
+    this._UserTyping.bind(this);
+  }
+
+  _UserTyping() {
+    //Send user.text when send is clicked on
+    let text = this.state.userText;
+    if(this.state.userTypeMessage !== '') {
+      this.setState({
+        userDisplay: 'flex',
+        userText: '',
+        chatBoxRightMessage: text
+      })
+
+        this._SandraTyping();
+
+      }
+      if(this.state.userTypeMessage === '') {
+        this.setState({
+          userTypeMessage: ''
+        })
+      }
   }
 
   _SandraTyping() {
@@ -30,18 +54,18 @@ class ChatSupport extends Component {
         console.log('in set TIMEOUT')
         this.setState({
           isSandraTyping: false,
-          isMessageDisplayed: true,
           display: 'flex'
         })
 
         this._SandraTyping();
 
       }, 10000)
-    } else if(this.state.isSandraTyping === false) {
-        this.setState({
-          sandraMessage: '',
-          chatboxLeftMessage: 'Hey, I\'m Sandra. How can I help you today?'
-        })
+    }
+    if(this.state.isSandraTyping === false) {
+      this.setState({
+        sandraMessage: '',
+        chatboxLeftMessage: 'Hey, I\'m Sandra. How can I help you today?'
+      })
     }
   }
 
@@ -56,6 +80,7 @@ class ChatSupport extends Component {
     console.log(test)
 
     let displayToggle = this.state.display;
+    let userDisplayToggle = this.state.userDisplay;
 
     return (
       <View style={{ paddingTop: 25 }}>
@@ -64,7 +89,7 @@ class ChatSupport extends Component {
         <View style={{ display: displayToggle }}>
           <View style={styles.containerStyle}>
               <Image
-                style={styles.imgStyle}
+                style={styles.imgLeftStyle}
                 source={{ uri: 'https://amylynnjorgensen.files.wordpress.com/2013/10/amy-profile.jpg' }}
               />
             <View style={{ marginBottom: 300 }}>
@@ -75,15 +100,34 @@ class ChatSupport extends Component {
             </View>
           </View>
         </View>
-          <Text style={styles.typingStyle}>{this.state.display === 'none' ? this.state.sandraMessage : ''}</Text>
-        <View style={{ marginTop: 420, marginBottom: 80 }}>
+        {/*  User response + bubble down here*/}
+        <View style={{ display: userDisplayToggle }}>
+          <View style={styles.containerStyle}>
+            <View style={{ marginBottom: 300 }}>
+              <View style={styles.chatBoxRightStyle}>
+                <Text style={styles.supportTextStyle}>{this.state.chatBoxRightMessage}</Text>
+                <Text style={styles.userNameStyle}>Karen Price, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
+              </View>
+            </View>
+            <Image
+              style={styles.imgRightStyle}
+              source={require('../img/karen.png')}
+            />
+          </View>
+        </View>
+
+          <Text style={styles.sandraTypingStyle}>{this.state.display === 'none' ? this.state.sandraMessage : '' }</Text>
+          <Text style={styles.userTypingStyle}>{this.state.userText === '' ? '' : this.state.userTypeMessage}</Text>
+        <View style={{ marginTop: 350, marginBottom: 80 }}>
           <Section>
             <TextInput
               style={{ width: '75%' }}
               placeholder="Type your question here"
-              onChangeText={(userText) => this.setState({userText})}
+              ref="typeBox"
+              value={this.state.userText}
+              onChangeText={(userText) => this.setState({ userText, userTypeMessage: 'Karen is typing...' })}
             />
-            <TurqButton onPress={() => this._SandraTyping()}>
+            <TurqButton onPress={() => this._UserTyping()}>
               <Text>Send</Text>
             </TurqButton>
           </Section>
@@ -101,10 +145,10 @@ const styles = {
     fontWeight: '600',
     textAlign: 'center'
   },
-  imgStyle: {
+  imgLeftStyle: {
     height: 50,
     width: 50,
-    marginTop: 20,
+    marginTop: 100,
     marginLeft: 65,
     borderRadius: 15,
     borderColor: '#ddd',
@@ -124,6 +168,14 @@ const styles = {
     marginTop: 10,
     backgroundColor: 'transparent'
   },
+  userNameStyle: {
+    fontSize: 10,
+    fontWeight: '300',
+    alignSelf: 'flex-start',
+    marginLeft: 5,
+    marginTop: 10,
+    backgroundColor: 'transparent'
+  },
   supportTextStyle: {
     fontSize: 13
   },
@@ -135,7 +187,7 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    marginTop: 30,
+    marginTop: 100,
     marginRight: 70,
     backgroundColor: '#e0ecff',
     borderRadius: 20,
@@ -150,7 +202,7 @@ const styles = {
     shadowOpacity: 0.3,
     shadowRadius: 2,
     marginTop: 30,
-    marginRight: 70,
+    marginLeft: 70,
     backgroundColor: '#f2ffdb',
     borderRadius: 20,
     padding: 20,
@@ -160,13 +212,27 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    // marginTop: 160,
   },
-  typingStyle: {
-    marginTop: 40,
+  userTypingStyle: {
+    fontSize: 12,
+    fontWeight: '300',
+    backgroundColor: 'transparent',
+    alignSelf: 'flex-end'
+  },
+  sandraTypingStyle: {
+    marginTop: 100,
     fontSize: 12,
     fontWeight: '300',
     backgroundColor: 'transparent'
+  },
+  imgRightStyle: {
+    height: 50,
+    width: 50,
+    marginTop: 20,
+    marginLeft: 10,
+    marginRight: 70,
+    borderRadius: 20,
+    borderColor: '#ddd',
   }
 }
 
