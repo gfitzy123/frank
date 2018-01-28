@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, TextInput } from 'react-native';
 import NavBar from './NavBar';
 import Section from './common/Section';
-import { Input } from './common/Index';
+import { Input, TurqButton } from './common/Index';
 
 class ChatSupport extends Component {
   constructor(props) {
@@ -11,8 +11,9 @@ class ChatSupport extends Component {
       isSandraTyping: true,
       isMessageDisplayed: false,
       sandraMessage: '',
-      chatboxMessage: '',
-      display: 'flex'
+      chatboxLeftMessage: '',
+      display: 'none',
+      userText: ''
     }
     this._SandraTyping.bind(this);
   }
@@ -39,13 +40,9 @@ class ChatSupport extends Component {
     } else if(this.state.isSandraTyping === false) {
         this.setState({
           sandraMessage: '',
-          chatboxMessage: 'Hey, I\'m Sandra. How can I help you today?'
+          chatboxLeftMessage: 'Hey, I\'m Sandra. How can I help you today?'
         })
     }
-  }
-
-  componentWillMount() {
-    this._SandraTyping();
   }
 
   render() {
@@ -55,37 +52,40 @@ class ChatSupport extends Component {
     let currentDay = date.slice(7, 10);
     let currentYear = date.slice(10, 15);
 
-    //Create function for "Sandra is typing..." when the user first enters
-    //the screen before the automated text appears
+    let test = this.state.text;
+    console.log(test)
 
     let displayToggle = this.state.display;
-    console.log('display toggle, ', displayToggle)
 
     return (
       <View style={{ paddingTop: 25 }}>
         <Text style={styles.titleStyle}>Support</Text>
         <View style={styles.lineStyle} />
+        <View style={{ display: displayToggle }}>
           <View style={styles.containerStyle}>
-            <Image
-              style={styles.imgStyle}
-              source={{ uri: 'https://amylynnjorgensen.files.wordpress.com/2013/10/amy-profile.jpg' }}
-            />
+              <Image
+                style={styles.imgStyle}
+                source={{ uri: 'https://amylynnjorgensen.files.wordpress.com/2013/10/amy-profile.jpg' }}
+              />
             <View style={{ marginBottom: 300 }}>
-              <View style={{ display: displayToggle }}>
-                <View style={styles.chatBoxStyle}>
-                  <Text style={styles.supportTextStyle}>{this.state.chatboxMessage}</Text>
-                  {/* Hey, I'm Sandra. How can I help you today? */}
-                  <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
-                </View>
+              <View style={styles.chatBoxLeftStyle}>
+                <Text style={styles.supportTextStyle}>{this.state.chatboxLeftMessage}</Text>
+                <Text style={styles.supportNameStyle}>Sandra Duquet, <Text>{ currentMonth + ' ' + currentDay + ', ' + currentYear}</Text></Text>
               </View>
-              <Text style={styles.typingStyle}>{this.state.display === 'none' ? this.state.sandraMessage : ''}</Text>
             </View>
+          </View>
         </View>
-        <View style={{ marginTop: 400, marginBottom: 80 }}>
+          <Text style={styles.typingStyle}>{this.state.display === 'none' ? this.state.sandraMessage : ''}</Text>
+        <View style={{ marginTop: 420, marginBottom: 80 }}>
           <Section>
             <TextInput
+              style={{ width: '75%' }}
               placeholder="Type your question here"
+              onChangeText={(userText) => this.setState({userText})}
             />
+            <TurqButton onPress={() => this._SandraTyping()}>
+              <Text>Send</Text>
+            </TurqButton>
           </Section>
         </View>
         <NavBar />
@@ -107,7 +107,7 @@ const styles = {
     marginTop: 20,
     marginLeft: 65,
     borderRadius: 15,
-    borderColor: '#ddd'
+    borderColor: '#ddd',
   },
   lineStyle:{
     borderWidth: 0.6,
@@ -127,7 +127,7 @@ const styles = {
   supportTextStyle: {
     fontSize: 13
   },
-  chatBoxStyle: {
+  chatBoxLeftStyle: {
     borderWidth: 1,
     borderColor: '#ddd',
     borderBottomWidth: 0,
@@ -141,16 +141,30 @@ const styles = {
     borderRadius: 20,
     padding: 20,
   },
+  chatBoxRightStyle : {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderBottomWidth: 0,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    marginTop: 30,
+    marginRight: 70,
+    backgroundColor: '#f2ffdb',
+    borderRadius: 20,
+    padding: 20,
+  },
   containerStyle: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginBottom: 100,
+    // marginTop: 160,
   },
   typingStyle: {
     marginTop: 40,
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: '300',
     backgroundColor: 'transparent'
   }
