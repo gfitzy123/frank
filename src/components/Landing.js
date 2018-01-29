@@ -11,8 +11,7 @@ class Landing extends Component {
       <View style={styles.viewStyle}>
         <Header headerText="Statistics" />
           <View style={styles.containerStyle}>
-            <Image style={styles.donuteStyle} source={require('../img/donute.png') } />
-            <Image style={styles.legendStyle} source={require('../img/legend.png')} />
+            <Image style={styles.donuteStyle} source={require('../img/newlogistics.png')} />
           </View>
           <Image style={styles.imgStyle} source={require('../img/big-chart.png')} accessibilityLabel="a chart of electric watt usage" />
         <NavBar />
@@ -33,13 +32,7 @@ const styles = {
     padding: 10,
   },
   donuteStyle: {
-    marginTop: 15,
-    marginBottom: 10,
-    alignSelf: 'center',
-  },
-  legendStyle: {
-    alignSelf: 'center',
-    marginTop: 15
+    marginLeft: 20
   },
   containerStyle: {
     backgroundColor: '#fff',
@@ -53,4 +46,3 @@ const styles = {
 }
 
 export default Landing;
-
