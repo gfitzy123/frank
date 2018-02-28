@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ImageBackground } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+
 import { CardSection, Button } from './common/Index';
 
 class Home extends Component {

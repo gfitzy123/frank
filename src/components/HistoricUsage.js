@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Slider from 'react-native-slider';
+
+// common libraries
 import Section from './common/Section';
 import UsageChart from './UsageChart';
 import NavBar from './NavBar';
