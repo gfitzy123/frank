@@ -8,6 +8,7 @@
     "start": "node_modules/nodemon/bin/nodemon.js -- node_modules/babel-cli/bin/babel-node.js server.js"
   },
   "dependencies": {
+    "@mapbox/react-native-mapbox-gl": "^6.0.3",
     "axios": "^0.17.1",
     "firebase": "^4.8.0",
     "react": "^16.0.0-alpha.12",
