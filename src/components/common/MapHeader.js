@@ -34,18 +34,19 @@ class MapHeader extends Component {
 
 const styles = {
   viewStyle: {
-    backgroundColor: 'transparent',
+    backgroundColor: '#fff',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     alignContent: 'space-between',
     flexDirection: 'row',
     paddingTop: 30,
+    paddingBottom: 10,
     elevation: 2,
-    position: 'absolute',
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
+    zIndex: 1,
   },
   textStyle: {
     fontSize: 16,

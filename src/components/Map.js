@@ -16,7 +16,7 @@ class Map extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        {/* <MapHeader headerText="Find Meters" /> */}
+        <MapHeader headerText="Find Meters" />
         {/* <Image
           style={{ width: 450, height: 615, marginBottom: 50 }}
           source={require('../img/MapHolder.png')}
@@ -27,7 +27,7 @@ class Map extends Component {
             centerCoordinate={[11.256, 43.770]}
             style={{ flex: 1 }}
         />
-        {/* <NavBar /> */}
+        <NavBar />
       </View>
     );
   }
