@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
+import Mapbox from '@mapbox/react-native-mapbox-gl';
+
 import { MapHeader } from './common/Index';
 import NavBar from './NavBar';
-import Mapbox from '@mapbox/react-native-mapbox-gl';
 
 Mapbox.setAccessToken('pk.eyJ1Ijoic2V2ZW52YXJpYW5jZSIsImEiOiJjamI4OTAydTEwMWV5MnFxZ2hidTBvY3VmIn0.3A6cLnUZ5gbPUJKfLbbmIA');
 
@@ -17,10 +18,6 @@ class Map extends Component {
     return (
       <View style={{ flex: 1 }}>
         <MapHeader headerText="Find Meters" />
-        {/* <Image
-          style={{ width: 450, height: 615, marginBottom: 50 }}
-          source={require('../img/MapHolder.png')}
-        /> */}
         <Mapbox.MapView
             styleURL={Mapbox.StyleURL.Street}
             zoomLevel={15}

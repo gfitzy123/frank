@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
+
 import { CardSection, TurqButton, Header } from './common/Index';
 import NavBar from './NavBar';
 

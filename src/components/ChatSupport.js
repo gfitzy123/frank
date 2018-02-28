@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TextInput } from 'react-native';
+
 import NavBar from './NavBar';
 import Section from './common/Section';
 import { TurqButton } from './common/Index';

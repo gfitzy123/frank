@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions } from 'react-native';
-import Data from '../data.json';
 import Svg from "react-native-svg";
 import {
   VictoryBar,
@@ -9,6 +8,8 @@ import {
   VictoryAxis
 } from 'victory-native';
 import { VictoryTheme } from "victory-core";
+
+import Data from '../data.json';
 
 class UsageChart extends Component {
   constructor(props) {

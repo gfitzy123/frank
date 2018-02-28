@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+
 import { CardSection } from './common/Index';
 
 class SideNav extends Component {
